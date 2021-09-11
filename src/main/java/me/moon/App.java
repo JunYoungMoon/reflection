@@ -11,13 +11,13 @@ public class App
 {
     public static void main( String[] args ) throws ClassNotFoundException {
 
-        /*-클래스 정보 조회-
+        /*-클래스 정보 조회-*/
 
-        case 1:
+        //case 1:
         Class<Book> bookClass = Book.class;
         Book book = new Book();
 
-        case 2:
+/*        case 2:
         Book book = new Book();
         Class<? extends Book> aClass = book.getClass();
 
@@ -26,9 +26,9 @@ public class App
 
         Arrays.stream(bookClass.getDeclaredFields()).forEach(System.out::println);
 
-        System.out.println("\n");
+        System.out.println("\n");*/
 
-        Field
+        //Field
         Arrays.stream(bookClass.getDeclaredFields()).forEach(field -> {
             try {
                 int modifiers = field.getModifiers();
@@ -48,7 +48,7 @@ public class App
 
         System.out.println("\n");
 
-        Methods
+        //Methods
         Arrays.stream(bookClass.getMethods()).forEach(method->{
             int modifiers = method.getModifiers();
 
@@ -62,19 +62,19 @@ public class App
 
         System.out.println("\n");
 
-        Constructor
+        //Constructor
         Arrays.stream(bookClass.getConstructors()).forEach(System.out::println);
 
         System.out.println("\n");
 
-        Superclass
+        //Superclass
         System.out.println(MyBook.class.getSuperclass());
 
         System.out.println("\n");
-        Interface
-        Arrays.stream(MyBook.class.getInterfaces()).forEach(System.out::println);*/
+        //Interface
+        Arrays.stream(MyBook.class.getInterfaces()).forEach(System.out::println);
 
-        /*-애노테이션과 리플렉션-
+        /*-애노테이션과 리플렉션-*/
 
         Arrays.stream(Book.class.getAnnotations()).forEach(System.out::println);
 
@@ -95,10 +95,10 @@ public class App
                     System.out.println(myAnnotation.number());
                 }
             });
-        });*/
+        });
 
-        /*-클래스 정보 수정 또는 실행-
-        Class<?> bookClass = Class.forName("me.moon.Book2");
+        /*-클래스 정보 수정 또는 실행-*/
+        /*Class<?> bookClass = Class.forName("me.moon.Book2");
 
         try {
             Constructor<?> constructor = bookClass.getConstructor(String.class);
@@ -134,8 +134,7 @@ public class App
             e.printStackTrace();
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
-        }
-        */
+        }*/
 
     }
 }

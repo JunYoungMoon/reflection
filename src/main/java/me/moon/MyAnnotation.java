@@ -2,6 +2,7 @@ package me.moon;
 
 import java.lang.annotation.*;
 
+//런타임에 참조할 애노테이션은 Retention RUNTIME을 해줘야한다.
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.FIELD})
 @Inherited //상속이 되는 애노테이션
